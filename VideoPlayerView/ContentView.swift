@@ -10,10 +10,19 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            NavigationView {
+                VStack {
+                    NavigationLink(destination: RTSPVideoPlayerView()) {
+                        Text("Go To RTSP Page")
+                    }.padding()
+                    
+                    NavigationLink(destination: SkywatchHomepageView()) {
+                        Text("Go To Skywatch(flv) Page")
+                    }.padding()
+                }
+            }
+            
+            
         }
         .padding()
     }
